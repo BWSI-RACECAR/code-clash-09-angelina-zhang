@@ -39,14 +39,21 @@ class Solution:
         for i in range(0, len(numb)):
             if numb[i] == '.':
                 count_numb+=1
-        tim = count_alph *(26-(3-count_alph))
-        bim = count_numb *(10-(4-count_numb))
-        if tim == 0:
-            tim = 1
-        if bim ==0:
-            bim = 1
-        comb = tim*bim
-        return comb
+        result = 1
+        for i in range(24, 24+count_alph):
+            result *= i
+        for i in range(7, 7+count_numb):
+            result *= i
+            
+        return result
+        # tim = count_alph *(26-(3-count_alph))
+        # bim = count_numb *(10-(4-count_numb))
+        # if tim == 0:
+        #     tim = 1
+        # if bim ==0:
+        #     bim = 1
+        # comb = tim*bim
+        # return comb
         
         
 
